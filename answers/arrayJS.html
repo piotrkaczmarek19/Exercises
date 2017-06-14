@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+</head>
+	
+	<h1> 30exs per day</h1>
+	
+	<p>finished at 30</p>
+
+	<input type="text" id="text1"></input>  
+	<input type="button" id="button1" value="Add" onclick="add_element_to_array();"></input>  
+	<input type="button" id="button2" value="Display" onclick="display_array();"></input>  
+	<div id="Result"></div>
+
+<script>
+	
+	// check if input is array or not
+	console.log(toString.call(5));
+
+	// copy array
+	var arr = [2,5,6,8,9],
+		arr2 = arr.slice(0);
+	console.log(arr2);
+
+	// join arr
+	var arr = ["Red", "Green", "White", "Black"];
+	console.log(arr.join("+"));
+
+	// add elements to array via input
+    var x = 0;  
+    var array = Array();  
+      
+    function add_element_to_array()  
+    {  
+     array[x] = document.getElementById("text1").value;   
+     x++;  
+     document.getElementById("text1").value = "";  
+    }  
+      
+    function display_array()  
+    {  
+       var e = "<hr/>";     
+          
+       for (var y=0; y<array.length; y++)  
+       {  
+         e += "Element " + y + " = " + array[y] + "<br/>";  
+       }  
+       document.getElementById("Result").innerHTML = e;  
+    }  
+
+
+    // Remove duplicates from arr
+    var remove_duplicates = function(num)
+    {
+    	var x,
+    		len = num.length,
+    		out = [],
+    		obj = {};
+
+		for (x=0; x<len ; x++)
+		{
+			obj[num[x]] = 0;
+		}
+		for (x in obj) 
+		{
+			out.push(x);
+		}
+		return out;
+    }
+    var Mynum = [1, 2, 2, 4, 5, 4, 7, 8, 7, 3, 6];  
+	result = remove_duplicates(Mynum);  
+	console.log(Mynum);  
+	console.log(result);  
+
+	// shuffle array
+	var array_shuffle = function(arr)
+	{
+		var shuffled = [];
+		var len = arr.length
+		for (i=0; i<len; i++)
+		{
+			index = Math.floor(Math.random() * (arr.length));
+			shuffled.push(arr[index]);
+			arr.splice(index,1);
+		} 
+		return shuffled;
+	}
+
+	console.log(array_shuffle([1, 2, 8, 7, 3, 6]));
+
+	// flatten multi array
+	console.log([].concat.apply([], [1, [2], [3, 4],[5,6]]));
+	myArray = [1, [2], [3, 4],[5,6]];
+	var myNewArray = myArray.reduce(function(prev, curr) {
+	  return curr.concat(prev);
+	});
+	console.log(myNewArray);
+
+	// difference between two arrays
+	Array.prototype.diff = function(a)
+	{
+		return this.filter(function (i) {return a.indexOf(i) < 0;});
+	}
+
+	Array.prototype.array_diff = function (arr2)
+	{
+		return this.filter(function (i){return arr2.indexOf(i) < 0});
+	}	
+	arr1 = [1, 2, 3];
+	arr2 = [100, 2, 1, 10];
+	console.log(arr1.array_diff(arr2));
+
+
+	console.log(arr2.filter(function(i){return i >= 10}));
+
+	// Removing Nan, empty values
+	var arr1 = [NaN, 0, 15, false, -22, 'd',undefined, 47, null];
+	console.log(arr1.filter(Number));
+
+	// sort by key
+	var library = [ 
+   { author: 'Bill Gates', title: 'The Road Ahead', libraryID: 1254},
+   { author: 'Steve Jobs', title: 'Walter Isaacson', libraryID: 4264},
+   { author: 'Suzanne Collins', title: 'Mockingjay: The Final Book of The Hunger Games', libraryID: 3245}
+   ];
+
+   
+   library.sort(function(x,y){return x.title < y.title ? 1 : -1});
+   console.log(library)
+
+   // longest common starting substring
+   var longest_substring = function(arr)
+   {
+   		var A = arr.concat().sort(),
+   		a1= A[0], a2= A[A.length-1], L= a1.length, i= 0;
+   		while (i<L && a1.charAt(i) === a2.charAt(i)) i++;
+   		return a1.substring(0,i);
+   }
+
+   arr = ['interspecies', 'interstelar', 'interstate'];
+   console.log(longest_substring(arr));
+
+   // find pairs that equal value (2sum)
+   var two_sum = function(arr, target)
+   {	
+   		var map = [], solution = [];
+   		for (i = 0; i < arr.length; i++)
+   		{
+   			complement = target - arr[i];
+
+   			console.log(complement)
+   			if (map.indexOf(complement) >= 0)
+   			{
+   				return([complement, arr[i]]);
+   			}
+   			map.push(arr[i])
+   		}
+   		
+   }
+   console.log(two_sum([5,45,10,40,50,60,70], 50))
+</script>

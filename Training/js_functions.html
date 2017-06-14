@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+</head>
+	
+	<h1> 30exs per day</h1>
+
+	<p>started at functions 15</p>
+
+	<a href="recursive.html">Recursive functions</a>
+<script>
+	var reverse_number = function(number)
+	{
+
+	}
+	console.log(reverse_number(123456789))
+
+	var check_palindrome = function(string)
+	{
+
+	}
+	console.log(check_palindrome("nurses run"));
+
+	// generates all combinations of a word
+	var word_combinations = function(aword)
+	{
+
+	}
+	console.log(word_combinations("dog"));
+
+	// returns string with letters arranged in alphabetical order
+	var alphabetical_order = function(aword)
+	{
+
+	}
+	console.log(alphabetical_order("banter"));
+
+	// Capitalize first letter of each word
+	var capitalize = function(astring)
+	{
+
+	}
+	console.log(capitalize("capitalize first letter of each word"));
+
+	// Finds the longest word in a string
+	var find_longest_word = function(astring)
+	{
+
+	}
+
+	// Return number of vowels in a word
+	var number_vowels = function(aword)
+	{
+
+	}
+	console.log(number_vowels("champagne"));
+
+	// find whether number is prime or not
+	var is_prime = function(anint)
+	{
+
+	}
+	console.log(is_prime(97));
+
+	// Return type of variable
+	var check_typeof = function(avar)
+	{
+
+	}
+	console.log(typeof "string");
+
+	// Return nXn identity matrix
+	var Idx_matrix = function(dimension)
+	{
+
+	}
+	console.log(Idx_matrix(4))
+
+	// Return whether a number  is perfect or not.
+	var isPerfect = function(anint)
+	{
+
+	}
+	console.log("6 is perfect: "+isPerfect(6));
+
+	// Convert amount to coins (recursive)
+    function amountTocoins(amount, coins)   
+    {  
+
+    }   
+    console.log(amountTocoins(46, [25, 10, 5, 2,1]));  
+
+    // Get number of occurences of all letters in a string
+    var count_letters = function(astring)
+
+    }
+    console.log(count_letters("TThe quick brown fox jumps over the lazy dog"));
+
+    // Binary Seach
+    var binary_search = function(arr, val)
+    {
+
+    }
+	var myArray = [1, 2, 3, 5, 6, 7, 10, 11, 14, 15, 17, 19, 20, 22, 23];
+	console.log(binary_search(myArray,6));
+
+	// Return larger than number from array
+	var arr_cmp = function(arr, val)
+	{
+
+	}
+	console.log(arr_cmp([1,5,2,3,6,99], 4))
+
+	// Return all possible k subsets
+    function subset(arra, arra_size)  
+     {  
+        var result_set = [],   
+            result;  
+          
+         
+    for(var x = 0; x < Math.pow(2, arra.length); x++)  
+      {  
+        result = [];  
+        i = arra.length - 1;   
+         do  
+          {  
+          if( (x & (1 << i)) !== 0)  
+              {  
+                 result.push(arra[i]);  
+               }  
+            }  while(i--);  
+      
+        if( result.length >= arra_size)  
+           {  
+              result_set.push(result);  
+            }  
+        }  
+      
+        return result_set;   
+    }  
+      
+    console.log(subset([1, 2, 3], 2));
+
+    // Count occurences of letter in a string
+    var count_occurences = function(astring, letter)
+    {
+
+    }
+    console.log(count_occurences("indie gogo","e"));
+
+    // Bubble Sort
+	var a = [34, 203, 3, 746, 200, 984, 198, 764, 9];
+	 
+	function bubbleSort(a)
+	{
+
+	}
+	 
+	bubbleSort(a);
+	console.log(a);
+
+	// Finds longest palindrome in a string
+	var longest_palindrome = function(astring)
+	{
+
+	}
+	console.log(longest_palindrome("banana"));
+
+
+</script>

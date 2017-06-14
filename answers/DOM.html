@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+</head>
+	
+	<h1>20exs per day</h1>
+	
+	<p>finished at </p>
+
+
+	<p id ='text'>JavaScript Exercises - w3resource</p>   
+	<div>  
+	<button id="jsstyle"  
+	>Style</button> 
+
+	<form id="form1">  
+	First name: <input type="text" name="fname" value="David">
+	<br>  
+	Last name: <input type="text" name="lname" value="Beckham">
+	<br>  
+	<input type="submit" value="Submit"> 
+	</form>
+	<p><a id="w3r" type="text/html" hreflang="en-us" rel="nofollow" target="_self" href="http://www.w3resource.com/">w3resource</a></p>  
+	<button onclick="getAttributes()">Click here to get  attributes value</button>
+
+	<table id="sampleTable" border="1">  
+	<tr><td>Row1 cell1</td>  
+	<td>Row1 cell2</td></tr>  
+	<tr><td>Row2 cell1</td>  
+	<td>Row2 cell2</td></tr>  
+	</table><br>  
+	<input type="button" onclick="insert_Row()" value="Insert row">
+
+	<table id="myTable" border="1">  
+	<tr><td>Row1 cell1</td>  
+	<td>Row1 cell2</td></tr>  
+	<tr><td>Row2 cell1</td>  
+	<td>Row2 cell2</td></tr>  
+	<tr><td>Row3 cell1</td>  
+	<td>Row3 cell2</td></tr>  
+	</table><form>  
+	<input type="button" onclick="changeContent()" value="Change content">
+<script>
+	// Add random color to text on click
+	var js_style = function()
+	{
+		var el = document.getElementById("text"),
+			a = Math.floor(Math.random() * 255),
+			b = Math.floor(Math.random() * 255),
+			c = Math.floor(Math.random() * 255);
+		el.style = "color: rgb("+a+","+b+","+c+")";
+	};
+	el = document.getElementById("jsstyle");
+	el.addEventListener("click", js_style);
+
+	// Get form value on submit
+	var getFormValue = function()
+	{
+		var el = document.getElementById("form1"),
+			fname = el.elements[0].value,
+			lname = el.elements[1].value;
+
+		alert("My Name is "+fname+", "+fname+" "+lname);
+	}
+
+	el = document.getElementById("form1");
+	el.addEventListener("submit", getFormValue);
+
+	// Get info from node
+	var getAttributes = function()
+	{
+		var el = document.getElementById("w3r");
+		href = el.href;
+		hreflang = el.hreflang;
+		type = el.type;
+
+		console.log(href+", "+hreflang+", "+type);
+	}
+
+	var insert_Row = function()
+	{
+		var el = document.getElementById("sampleTable");
+		var node = document.createElement("tr");
+		node.innerHTML = "<td>cell</td><td>cell</td>";
+		el.appendChild(node);
+	}
+
+</script>

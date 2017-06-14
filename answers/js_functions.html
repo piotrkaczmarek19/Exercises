@@ -1,0 +1,356 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+</head>
+	
+	<h1> 30exs per day</h1>
+
+	<p>started at functions 15</p>
+
+	<a href="recursive.html">Recursive functions</a>
+<script>
+	var reverse_number = function(number)
+	{
+		number = number + "";
+		return number.split("").reverse().join("");
+	}
+	console.log(reverse_number(123456789))
+
+	var check_palindrome = function(string)
+	{
+		string = string.join("").split(" ")
+		var l = string.length;
+		for(var i = 0; i < l - i - 1; i++)
+		{
+			if (string.charAt(i) != string.charAt(l - i - 1))
+			{
+				return "not a palindrome";
+			}
+		}
+	}
+	console.log(check_palindrome("nurses run"));
+
+	// generates all combinations of a word
+	var word_combinations = function(aword)
+	{
+		var combinations = [];
+		for (i = 0;i < aword.length;i++)
+		{
+			for (j=aword.length;j>i;j--)
+			{
+				combinations.push(aword.substring(i,j));
+			}
+		}
+		return combinations
+	}
+	console.log(word_combinations("dog"));
+
+	// returns string with letters arranged in alphabetical order
+	var alphabetical_order = function(aword)
+	{
+		return aword.split("").sort().join("");
+	}
+	console.log(alphabetical_order("banter"));
+
+	var capitalize = function(astring)
+	{
+		var astring_array = astring.split(" ");
+		var new_array = [];
+		for (key in astring_array)
+		{
+			new_string = astring_array[key].charAt(0).toUpperCase() + astring_array[key].slice(1);
+			new_array.push(new_string) 		
+		}
+		return new_array.join(" ");
+	}
+
+
+	// Finds the longest word in a string
+	var find_longest_word = function(astring)
+	{
+		var astring_array = astring.split(" "),
+			longest_word = "";
+		for(key in astring_array)
+		{
+			astring_array[key].length > longest_word.length ? longest_word = astring_array[key] : longest_word;
+		}
+		return longest_word;
+	}
+
+
+	// Return number of vowels in a word
+	var number_vowels = function(aword)
+	{
+		var aword_array = aword.split("");
+		var	vowels = ["a","e","o","i","u"],
+			counter = 0;
+		for (key in aword_array)
+		{
+			if (vowels.indexOf(aword_array[key]) != -1)
+			{
+				counter ++;
+			}
+		}
+		return counter;
+	}
+	console.log(number_vowels("champagne"));
+
+	// find whether number is prime or not
+	var is_prime = function(anint)
+	{
+		counter = 0;
+		for (i = 1;i<=anint;i++)
+		{
+			if (anint % i == 0)
+			{
+				counter ++;
+			}
+		}
+		if (counter == 2)
+		{
+			return true;
+		} else
+		{
+			return false;
+		}
+	}
+	console.log(is_prime(97));
+
+	// Return type of variable
+	var check_typeof = function(value)
+	{
+		var dtypes = [Function, RegExp, Number, String, Boolean, Object], x; 
+		if (typeof value === "object" || typeof value === "function")
+		{
+			for (var x = 0; x<dtypes.length; x++)
+			{
+				if (value instanceof dtypes[x])
+				{
+					return dtypes[x];
+				}
+			}
+		}
+		return typeof value;
+	}
+	console.log(typeof "string");
+
+	// Return nXn identity matrix
+	var Idx_matrix = function(dimension)
+	{
+		var out = [];
+		var line = Array.apply(null, Array(dimension)).map(Number.prototype.valueOf,0); // map(callback [, args])
+		for (var i = 0; i < dimension; i++)
+		{
+			var curr = line.slice(0);
+			curr[i] = 1;
+			out.push(curr);
+		}
+		return out;
+	}
+	console.log(Idx_matrix(4));
+
+	// Return whether a number  is perfect or not.
+	var isPerfect = function(anint)
+	{
+		var aliquot = 0;
+		for (i = 0; i < anint; i++)
+		{
+			if (anint % i == 0)
+			{
+				aliquot += i;
+			}
+		}
+		return aliquot == anint;
+	}
+	console.log("6 is perfect: "+isPerfect(6));
+
+	// Convert amount to coins
+    function amountTocoins(amount, coins)   
+    {  
+     if (amount === 0)   
+      {  
+         return [];  
+       }   
+     else  
+       {  
+         if (amount >= coins[0])   
+           {  
+            left = (amount - coins[0]);  
+            return [coins[0]].concat( amountTocoins(left, coins) );  
+            }   
+          else  
+            {  
+             coins.shift();  
+             return amountTocoins(amount, coins);  
+            }  
+        }  
+    }   
+    console.log(amountTocoins(46, [25, 10, 5, 2,1]));  
+
+    // Get number of occurences of a letter in a string
+    var count_letters = function(astring)
+    {
+    	var counter = [];
+    	for (i=0;i<astring.length-1;i++)
+    	{  		
+    		if (counter.indexOf(astring[i]) != -1)
+    		{   			
+
+    			counter[astring[i]] ++;
+    		}
+    		else
+    		{
+    			counter[astring[i]] = 1;    			
+    		}
+    	}
+    	return counter;
+    }
+    console.log(count_letters("TThe quick brown fox jumps over the lazy dog"));
+
+    // Binary Seach
+    var binary_search = function(arr, val)
+    {
+    	if (arr.length < 2)
+    	{
+    		return arr[0];
+    	}
+
+    	// middle of the sorted array
+    	m = Math.floor(arr.length / 2);
+    	first_half = arr.slice(0,m);
+    	second_half = arr.slice(m+1,arr.length-1);
+
+    	if(val > arr[m])
+    	{
+    		a = binary_search(second_half,val);
+    	}
+    	else
+    	{
+    		a = binary_search(first_half,val)
+    	}
+    	return a;
+    }
+	var myArray = [1, 2, 3, 5, 6, 7, 10, 11, 14, 15, 17, 19, 20, 22, 23];
+	console.log(binary_search(myArray,6));
+
+	// Return larger than number from array - O(n) time and O(1) space
+	var arr_cmp = function(arr, val)
+	{
+		for (var i = 0; i < arr.length; i++)
+		{
+			if (arr[i] < val)
+			{
+				arr.splice(i, 1);
+				i--;
+			}
+		}
+		return arr;
+	}
+	console.log(arr_cmp([1,5,2,3,6,99], 4))
+
+	// Create random ID
+	var create_ID = function(l)
+	{
+		var text = "";  
+		var char_list = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+		for (i=0;i<l;i++)
+		{
+			text += char_list[Math.floor(Math.random()*char_list.length)];
+		}
+
+		return text;
+	} 
+	console.log(create_ID(10));
+
+	// Return all possible k subsets
+    function subset(arra, arra_size)  
+     {  
+        var result_set = [],   
+            result;  
+          
+         
+    for(var x = 0; x < Math.pow(2, arra.length); x++)  
+      {  
+        result = [];  
+        i = arra.length - 1;   
+         do  
+          {  
+          if( (x & (1 << i)) !== 0)  
+              {  
+                 result.push(arra[i]);  
+               }  
+            }  while(i--);  
+      
+        if( result.length >= arra_size)  
+           {  
+              result_set.push(result);  
+            }  
+        }  
+      
+        return result_set;   
+    }  
+      
+    console.log(subset([1, 2, 3], 2));
+
+    // Count occurences of letter in a string
+    var count_occurences = function(astring, letter)
+    {
+    	counter = 0;
+    	for (i=0;i<astring.length;i++)
+    	{
+    		if (astring.charAt(i) == letter)
+    		{
+    			counter ++;
+    		}
+    	}
+    	return counter;
+    }
+    console.log(count_occurences("indie gogo","e"));
+
+    // Bubble Sort
+	var a = [34, 203, 3, 746, 200, 984, 198, 764, 9];
+	 
+	function bubbleSort(a)
+	{
+	    var swapped;
+	    do 
+	    {
+	        swapped = false;
+	        for (var i=0; i < a.length-1; i++) {
+	            if (a[i] > a[i+1]) {
+	                var temp = a[i];
+	                a[i] = a[i+1];
+	                a[i+1] = temp;
+	                swapped = true;
+	            }
+	        }
+	    } while (swapped);
+	}
+	 
+	bubbleSort(a);
+	console.log(a);
+
+	// Finds longest palindrome in a string
+	var longest_palindrome = function(astring)
+	{
+		var longest = "";
+		for (i=0;i<=astring.length;i++)
+		{
+			for(j=0;j<i;j++)
+			{
+				current_substr = astring.slice(j,i);
+				if (check_palindrome(current_substr) && longest.length < current_substr.length)
+				{
+					longest = current_substr;
+				}
+			}
+			
+		}
+		return longest;
+	}
+	console.log(longest_palindrome("banana"));
+
+
+</script>

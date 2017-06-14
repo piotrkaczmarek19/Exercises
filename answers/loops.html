@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+</head>
+	
+	<h1> 30exs per day</h1>
+	
+	
+	<a href="math.html">Math with JS</a>
+
+<script>
+	// display largest of two integers
+	var cmp_int = function(x,y)
+	{
+		return (x<y) ? y : x;
+	}
+	console.log(cmp_int(5,7))
+
+	var disp_sign = function(x,y,z)
+	{
+		arr = ["negative", "positive"];
+		i = Math.round(1/(1+Math.exp(-x*y*z)));
+		return arr[i]
+	}
+	console.log(disp_sign(7,6,9));
+
+	// display happy number
+    function happy_number(num)   
+    {  
+        var m, n ;  
+        var c = [] ;  
+       	
+       	// While num doesn't turn out to be a happy number or if we stumble upon a cycle (happens if num == 0)
+        while(num != 1 && c[num] !== true)   
+        {  
+            c[num] = true ;  
+            m = 0 ;  
+            // While all digits of number have not yet been processed
+            while (num > 0) {  
+            	// Extract units digit
+                n = num % 10 ;  
+                // add square of said digit to sum
+                m += n * n ;  
+                // normalize num to delete units digit
+                num = (num  - n) / 10 ;  
+            }  
+            // Num becomes sum of square of digits we just computed
+            num = m ;  
+        }  
+        return (num == 1) ;  
+    }  
+    
+    // First five happy numbers   
+    var count = 5;  
+    // First number to be checked
+    var num = 1;  
+    var f5 = '';   
+   while (count-- > 0)
+    {
+    	while (!happy_numbers(num))
+    	{
+    		num++;
+    		
+    	}
+    	f5 = f5 + (num + ", ");
+    	count++;
+    }   
+    console.log('First 5 happy numbers are : '+f5);  
+
+    // find Armstrong number of 3 digits (wtf)
+	function three_digit_armstrong_number()   
+	{  
+	 for (var i = 1; i < 10; ++i)   
+	 {  
+	   for (var j = 0; j < 10; ++j)   
+	     {  
+	        for (var k = 0; k < 10; ++k)  
+	        {  
+	          var pow = (Math.pow(i,3) + Math.pow(j,3) + Math.pow(k,3));  
+	          var plus = (i * 100 + j * 10 +  k);  
+	          if (pow == plus)   
+	           {       
+	             console.log(pow);  
+	            }  
+	         }  
+	       }  
+	    }  
+	  }      
+	
+	// construct pattern in console log
+	var pattern = function()
+	{
+		line = "";
+		for (i=0;i<6;i++)
+		{
+			line += " * ";
+			console.log(line);
+		}
+	}
+	pattern();
+
+
+	</script>

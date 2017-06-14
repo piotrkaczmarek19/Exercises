@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+</head>
+	
+	<h1> 30exs per day</h1>
+	
+	<p>finished at 30</p>
+
+	<input type="text" id="text1"></input>  
+	<input type="button" id="button1" value="Add" onclick="add_element_to_array();"></input>  
+	<input type="button" id="button2" value="Display" onclick="display_array();"></input>  
+	<div id="Result"></div>
+
+<script>
+	
+	// check if input is array or not
+	console.log(toString.call(5));
+
+	// copy array
+	var arr = [2,5,6,8,9],
+	
+	// join arr
+	var arr = ["Red", "Green", "White", "Black"];
+
+	// add elements to array via input
+    var x = 0;  
+    var array = Array();  
+      
+    function add_element_to_array()  
+    {  
+     array[x] = document.getElementById("text1").value;   
+     x++;  
+     document.getElementById("text1").value = "";  
+    }  
+      
+    function display_array()  
+    {  
+       var e = "<hr/>";     
+          
+       for (var y=0; y<array.length; y++)  
+       {  
+         e += "Element " + y + " = " + array[y] + "<br/>";  
+       }  
+       document.getElementById("Result").innerHTML = e;  
+    }  
+
+
+    // Remove duplicates from arr
+	var arra = [1, 2, 8, 7, 3, 6];
+
+	// flatten multi array using concat
+	myArray = [1, [2], [3, 4],[5,6]];
+
+	// difference between two arrays
+	arr1 = [1, 2, 3];
+	arr2 = [100, 2, 1, 10];
+
+	// Removing Nan, empty values
+	var arr1 = [NaN, 0, 15, false, -22, 'd',undefined, 47, null];
+
+	// sort by key
+	var library = [ 
+   { author: 'Bill Gates', title: 'The Road Ahead', libraryID: 1254},
+   { author: 'Steve Jobs', title: 'Walter Isaacson', libraryID: 4264},
+   { author: 'Suzanne Collins', title: 'Mockingjay: The Final Book of The Hunger Games', libraryID: 3245}
+   ];
+
+   // longest common starting substring
+   var arr = ['interspecies', 'interstelar', 'interstate'];
+
+   // find pairs in array of ints that equal given value (2sum)
+   var arr = [5,45,10,40,50,60,70]
+</script>

@@ -1,0 +1,313 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+</head>
+	
+	<h1>20exs per day</h1>
+	
+	<p>finished at </p>
+	<h1>Leetcode - Project Euler</h1>
+
+
+<script>
+	// 1- two sum single pass
+	var two_sum = function(arr, target)
+	{
+
+	};
+	console.log(two_sum([1,5,10,50,30,60,82,99], 35));
+
+	// 2 - add two numbers (first creating list object
+	function LinkedList()
+	{
+		// Record head
+		this.head = null;
+	}
+
+	LinkedList.prototype.add = function(val)
+	{
+		// turn val into a node
+
+		// Check if this is going to be the first node
+
+		// If not, traverse the whole list and add it to the end
+
+	};
+
+	LinkedList.prototype.remove = function(node)
+	{
+
+	};
+
+	// Turn integer into linked list with digits stored in reverse number
+	var NumberIntoList = function(val)
+	{
+		while (val > 1)
+		{
+			
+		}
+	};
+
+	var l1 = NumberIntoList(342),
+		l2 = NumberIntoList(465);
+
+	
+	var addTwoNumbers = function(l1,l2)
+	{
+
+	};
+
+	console.dir(addTwoNumbers(l1,l2)); // Expected result: 7->0->8
+
+	// Longest substring without repeating characters - O(n) time, interesting when n > 3
+	var longestSubstring = function(astring)
+	{
+
+	};
+
+	console.log(longestSubstring("feesdqffddsfgsg"));
+
+	var longestSubstring2 =  function(astring)
+	{
+
+	}
+	console.log(longestSubstring2("feesdqffddsfgsg"));
+	// Median of two sorted arrays (O(n) running time). We merge until we arrive to pointer = === n + 1 and then return either n+1 val if 2*n is odd, or ((n val + n+1 val) / 2) if 2*n is even
+	var twoArrayMedian = function(arr1,arr2)
+	{
+
+	};
+	var arr1 = [2, 5, 6, 9,10],
+		arr2 = [1,3, 15, 17,18];
+	console.log(twoArrayMedian(arr1,arr2));
+	
+	// Zigzag Conversion
+	var zigzag_conversion = function(astring)
+	{
+
+	};
+	var astring = "PAYPALISHIRING";
+	zigzag_conversion(astring);
+
+
+	/*********************************************************************************************
+	**********************************************************************************************
+	**********************************************************************************************
+	**********************************************************************************************
+	**********************************************************************************************
+	***/
+
+
+	// reverse number
+	var reverse_number = function(anint)
+	{
+
+	};
+
+	console.log(reverse_number(11999));
+
+	// Extracts all integers contained in a string and puts them with their sign in an integer array (works with whitespaces)
+	var atoi = function(astring)
+	{
+
+	};
+	console.log(atoi("kkdfg-7845dfggf+5454  56565465"));
+
+	// Find container with most water given n vertical wall partitions - O(n) time - expected output 20
+	var maxArea = function(height)
+	{
+		// two pointers at each extremity, increment or decrement the one that has the smaller height, compare area with max_area with each iteration
+	};
+	var arr = [1,2,6,9,3,55,5];
+	console.log(maxArea(arr));
+	
+	// 3-sum with a+b+c = 0, O(n^2) time
+	var three_sum = function(arr)
+	{
+		// 2sum in nested loop
+	};
+
+	console.log(three_sum([-1, 0, 1, 2, -1, -4]));
+
+	// 4-sum 
+	var four_sum = function(arr, target)
+	{
+		// sort array. nest loop -> four pointers, two coming from the loops, two others being at the extremities.
+		// If 4sum is bigger, decrement rightmost pointer by one, if smaller, increment the one after the second looop pointer by one.
+	}
+
+	console.log(four_sum([1, 0, -1, 0, -2, 2], 0))
+	// Letter combination of a phone number O(4*n^2) running time using FIFO
+	var letterCombinations = function(digits)
+	{
+
+	}
+	console.log(letterCombinations("5755"));
+
+	// Merge two sorted lists
+	var merge_sorted = function(arr1, arr2)
+	{
+
+	}
+
+	console.log(merge_sorted([1,3,5,7,9],[2,4,6,8]))
+
+	// Valid Parentheses
+	var valid_parentheses = function(astring)
+	{
+
+	}
+
+	console.log(valid_parentheses("[])"))
+
+	// remove duplicates from sorted array
+	var removeDuplicates = function(arr)
+	{
+
+	};
+	console.log(removeDuplicates([1,1,2, 4,4,5, 7, 7]));
+
+	/*********************************************************************************************
+	**********************************************************************************************
+	**********************************************************************************************
+	**********************************************************************************************
+	**********************************************************************************************
+	***/
+
+	// Remove all instances of el in array
+	var removeElement = function(arr, val)
+	{
+
+	};
+	console.log(removeElement([1,2,3,3,5,6,3], 3));
+
+	// return idx of first occurence of needle in haystack, or -1 otherwise
+	var strStr = function(haystack, needle)
+	{
+
+	}
+	console.log(strStr([1,1,1,5,1,1], 5));
+
+	// Divide two integers without using multiplication
+	var divide = function(dividend,divisor)
+	{
+
+	}
+	console.log(divide(15,2));
+
+	// Next permutation
+	var nextPermutation = function(arr)
+	{	
+
+	};
+
+	var arr = [0, 1, 2, 5, 3, 3, 0];
+	nextPermutation(arr);
+	console.log(arr);
+
+	// Search for a range
+	var searchRange = function(arr, target)
+	{
+
+	}
+	var arr = [5, 7, 7, 8, 8, 8, 10];
+	console.log(searchRange(arr, 8));
+
+	// longestValidParentheses - O(2 * n) complexity
+	var longestValidParentheses = function(s)
+	{
+
+	}
+
+	console.log(longestValidParentheses("((()(()()())))))))())"));
+
+	/*********************************************************************************************
+	**********************************************************************************************
+	**********************************************************************************************
+	**********************************************************************************************
+	**********************************************************************************************
+	***/
+
+	// search insert position (give position of target in sorted arr, or where it would be if not present) O(log(N)) running time
+	var searchInsert = function(arr, target)
+	{
+
+	}
+	var binarySearch = function(arr, target, start, finish)
+	{
+
+	}
+	var arr = [1,3,5,6];
+	console.log(searchInsert(arr, 2));
+
+	// trapping rain water
+	var trap = function(heights)
+	{
+
+	};
+	var arr = [0,1,0,2,1,0,1,3,2,1,2,1];
+	console.log(trap(arr));
+
+	// multiply two string without converting to int
+	var multiply = function(num1, num2)
+	{
+
+	};
+	console.log(multiply("125", "10"));
+
+	// count and say: 11, 21 , 1211... read: 21, 1211, 111221...
+	var countAndSay = function(n)
+	{
+
+	}
+	console.log(countAndSay(4))
+
+	/*********************************************************************************************
+	**********************************************************************************************
+	**********************************************************************************************
+	**********************************************************************************************
+	**********************************************************************************************
+	***/
+
+	// Jump Game - starting from beginning of array, reach the last index in the min number of jumps given that each element in the array represents the maximum jump length at that position
+	// http://www.programcreek.com/2014/03/leetcode-jump-game-java/
+	// Each iteration(O(n)), we check what is our reach at our current location. If current location can not be accessed by previous i - 1 jumps, we increase the step (we start at step zero)
+	var jump = function(nums)
+	{
+
+	};
+	var arr = [2,3,1,1,4];
+	console.log(jump(arr, 0));
+
+	// return all possible permutations between the numbers of an array using heap algorithm
+	// because using recursive functions, it is necessary to declare var i in the initiation of the for loop, otherwise, i is considered as a global variable, and as such, will end up skipping a lot of steps
+	var permute = function(nums)
+	{
+
+	}
+	var nums = [1,2,3];
+	console.log(permute(nums));
+
+	// N-queens place n queens on a nxn chessboard such that no two queens attack each other
+	// checks that there are no queens that are attacking the queen on column i
+	// only ever needs to check queens on columns < i
+	function noConflicts(columns, i) {
+
+	}
+
+	// recursively solves the n-queens problem by brute force
+	function queens(columns, i, n) {
+
+	}
+
+	// returns an array that records the queens' position in each column
+	// or false if no solution is found
+	solution = queens([], 0, 4);
+	var board = display_queens(solutions);
+	function display_queens(solutions)
+	{
+
+	}
+	console.log(board)
+</script>
